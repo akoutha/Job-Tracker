@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+  /*alert("HELLO") */ 
+    /*$("input:text").val("Glenn Quagmire");*/
+    var comp = $("input[name=company]").val()
+    var pname = $("input[name=PName]").val()
+    var date = $("input[name=date]").val()
+    var email = $("input[name=email]").val()
+    var medium = $("input[name=medium]").val()
+    var interest = $("input[name=interest]").val()
+    var rec = $("input[name=recruiter]").val()
+    var link = $("input[name=link]").val()
+   // var str = comp + " " pname + " " + date + " " + email + " " + medium + " " + interest + " " + rec + " " + link
+    alert(pname)
+    google.script.run.myFunction(comp,pname,date,email,medium,interest,rec,link)
+  });
+});
+</script>
+</head>
+<body>
+
+<p>Name: <input type="text" name="user"></p>
+
+
+
+ <? var now = new Date() 
+     var email = Session.getActiveUser().getEmail()?> 
+    <form>
+        <h1> Welcome to Job Tracker </h1><br>
+        <h3>Enter Job Info:</h3>
+        Company: <input type="text" name="company" value=""><br>
+        Position Name: <input type="text" name="PName" value=""><br>
+        Date:<input type = "text" name="date" value="<?=now ?>"><br>
+        Email Used:<input type = "text" name="email" value="<?=email ?>"><br>
+        Medium:<input type = "text" name="medium" value=""><br>
+        
+         Interest:<select name="interest">
+                  <option value="low">low</option>
+                  <option value="medium">medium</option>
+                  <option value="high">high</option>
+                  </select><br> 
+       Recruiter Name: <input type="text" name="recruiter" value=""><br>
+       Link:<input type="text" name="link" value=""><br>
+ 
+          <!-- <button class = "share" type="button" onclick='go();' id="go">Go!</button> -->       
+          <button class = "action" type="button">test</button> <!--Corresponds to javascript function to display selected meetings--> 
+    </form>
+
+<button>Set the value of the input field</button>
+
+</body>
+</html>
