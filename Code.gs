@@ -81,7 +81,7 @@ function myFunction(company,pname,date,email,medium,interest,rec,link) {
     //sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(name)
     var yeet = DriveApp.getFoldersByName('Job Tracking').next().getFilesByName(name).next().getId()
     var s2 = SpreadsheetApp.openById(yeet).getActiveSheet().activate()
-   // var s = SpreadsheetApp.getActiveSpreadsheet()
+   // var s = SpreadsheetApp.getActiveSpreadsheet()s
    // var ss = s.getSheetByName(name)
    // ss.activate()
     //var sheet2 = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(name)
@@ -102,7 +102,7 @@ function myFunction(company,pname,date,email,medium,interest,rec,link) {
 
 function doGet() {// runs HTML code
   
-  return HtmlService.createTemplateFromFile('test').evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME); 
+  return HtmlService.createTemplateFromFile('test2').evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME); 
   //return HtmlService.createHtmlOutputFromFile('test').setSandboxMode(HtmlService.SandboxMode.IFRAME);
 }
 

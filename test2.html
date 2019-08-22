@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <?  var yeet = DriveApp.getFoldersByName('Job Tracking').next().getFilesByName('newtestpt2').next().getId() 
+    var data = SpreadsheetApp
+        .openById(yeet)
+        .getActiveSheet()
+        .getDataRange()
+        .getValues(); ?>
+    <table>
+      <? for (var i = 0; i < data.length; i++) { ?>
+        <tr>
+          <? for (var j = 0; j < data[i].length; j++) { ?>
+            <td><?= data[i][j] ?></td>
+          <? } ?>
+        </tr>
+      <? } ?>
+    </table>
+  </body>
+</html>
