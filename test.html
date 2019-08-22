@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 
 <script>
 $(document).ready(function(){
   $("button").click(function(){
@@ -24,34 +26,33 @@ $(document).ready(function(){
 </head>
 <body>
 
-<p>Name: <input type="text" name="user"></p>
-
-
-
  <? var now = new Date() 
      var email = Session.getActiveUser().getEmail()?> 
+     <div style="text-align:center;">
     <form>
         <h1> Welcome to Job Tracker </h1><br>
         <h3>Enter Job Info:</h3>
-        Company: <input type="text" name="company" value=""><br>
-        Position Name: <input type="text" name="PName" value=""><br>
-        Date:<input type = "text" name="date" value="<?=now ?>"><br>
-        Email Used:<input type = "text" name="email" value="<?=email ?>"><br>
-        Medium:<input type = "text" name="medium" value=""><br>
+        Company: <br><input type="text" name="company" value=""><br>
+        Position Name: <br><input type="text" name="PName" value=""><br>
+        Date:<br><input type = "text" name="date" value="<?=now ?>"><br>
+        Email Used:<br><input type = "text" name="email" value="<?=email ?>"><br>
+        Medium:<br><input type = "text" name="medium" value=""><br>
         
-         Interest:<select name="interest">
+         Interest:<br><select name="interest">
                   <option value="low">low</option>
                   <option value="medium">medium</option>
                   <option value="high">high</option>
                   </select><br> 
-       Recruiter Name: <input type="text" name="recruiter" value=""><br>
-       Link:<input type="text" name="link" value=""><br>
+       Recruiter Name: <br><input type="text" name="recruiter" value=""><br>
+       Link:<br><input type="text" name="link" value=""><br>
  
           <!-- <button class = "share" type="button" onclick='go();' id="go">Go!</button> -->       
-          <button class = "action" type="button">test</button> <!--Corresponds to javascript function to display selected meetings--> 
+           <!-- <button class = "action" type="button">test</button> <!--Corresponds to javascript function to display selected meetings-->
     </form>
+    <br><button class = "action">Add Job!</button>
+    </div>
 
-<button>Set the value of the input field</button>
+
 
 </body>
 </html>

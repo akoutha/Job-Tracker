@@ -51,7 +51,7 @@ function myFunction(company,pname,date,email,medium,interest,rec,link) {
   var file_exists = DriveApp.getFoldersByName('Job Tracking').next().getFilesByName(name).hasNext()
   if(file_exists == false){
     sheet = SpreadsheetApp.create(name);
-    sheet.appendRow(['Company','Position Name','Date','Email','Medium','Interest','Recruiter','Link']);
+    sheet.appendRow(['Company','Position Name','Date','Email','Medium','Interest','Recruiter','Link','Status']);
     sheet.appendRow([c,p,d,e,m,i,r,l]);
     var file = DriveApp.getRootFolder().getFilesByName(name).next()
     file.makeCopy(DriveApp.getFoldersByName('Job Tracking').next()).setName(file.getName());
@@ -86,6 +86,11 @@ function myFunction(company,pname,date,email,medium,interest,rec,link) {
    // ss.activate()
     //var sheet2 = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(name)
     s2.appendRow([c,p,d,e,m,i,r,l])
+    var row = s2.getLastRow()
+    var lastRow = 'A'+row+':'+'H'+row
+    //var lastCell = 'H'+row
+    var lastCellRow = s2.getRange(lastRow)
+   lastCellRow.setBackground('yellow')
    // ss.appendRow([c,p,d,e,m,i,r,l])
    
       
