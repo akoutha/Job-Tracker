@@ -1,23 +1,68 @@
+
+
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <base target="_top">
-  </head>
-  <body>
-    <?  var yeet = DriveApp.getFoldersByName('Job Tracking').next().getFilesByName('newtestpt2').next().getId() 
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  background-color: #f1f1c1;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+</head>
+<body>
+
+
+ <?  var yeet = DriveApp.getFoldersByName('Job Tracking').next().getFilesByName('newtestpt2').next().getId() 
+    var url = SpreadsheetApp.openById(yeet).getUrl()
+    var header = SpreadsheetApp.openById(yeet).getActiveSheet().getRange('A1:H1').getValues()
     var data = SpreadsheetApp
         .openById(yeet)
         .getActiveSheet()
         .getDataRange()
         .getValues(); ?>
-    <table>
-      <? for (var i = 0; i < data.length; i++) { ?>
+        
+<table style="width:100%" align="center">
+
+   
+
+    <? for (var i = 0; i < data.length; i++) { ?>
         <tr>
           <? for (var j = 0; j < data[i].length; j++) { ?>
-            <td><?= data[i][j] ?></td>
+              <? if (i == 0) { ?>
+              <th > <?= data[i][j] ?> </th>
+              <? } else  { ?>
+              <td><?=data[i][j]?></td>
+              <? } ?>
           <? } ?>
         </tr>
       <? } ?>
-    </table>
-  </body>
+
+
+
+
+  
+</table>
+ <button class="share" onclick=" window.open('<?=url?>','_blank')"> Go to Spreadsheet</button>
+
+</body>
 </html>

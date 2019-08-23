@@ -10,16 +10,29 @@ $(document).ready(function(){
   /*alert("HELLO") */ 
     /*$("input:text").val("Glenn Quagmire");*/
     var comp = $("input[name=company]").val()
-    var pname = $("input[name=PName]").val()
+    var pname = $("input[name=pName]").val()
     var date = $("input[name=date]").val()
     var email = $("input[name=email]").val()
     var medium = $("input[name=medium]").val()
     var interest = $("input[name=interest]").val()
     var rec = $("input[name=recruiter]").val()
     var link = $("input[name=link]").val()
+    
+    $("input[name=company]").val("")
+    $("input[name=pName]").val("")
+    $("input[name=medium]").val("")
+    $("input[name=interest]").val("")
+    $("input[name=recruiter]").val("")
+    $("input[name=link]").val("")
    // var str = comp + " " pname + " " + date + " " + email + " " + medium + " " + interest + " " + rec + " " + link
-    alert(pname)
+    alert("You have just applied to a job at " + comp + " for " + pname)
     google.script.run.myFunction(comp,pname,date,email,medium,interest,rec,link)
+    
+    
+    
+    
+    //window.location.reload();
+    
   });
 });
 </script>
@@ -33,7 +46,7 @@ $(document).ready(function(){
         <h1> Welcome to Job Tracker </h1><br>
         <h3>Enter Job Info:</h3>
         Company: <br><input type="text" name="company" value=""><br>
-        Position Name: <br><input type="text" name="PName" value=""><br>
+        Position Name: <br><input type="text" name="pName" value=""><br>
         Date:<br><input type = "text" name="date" value="<?=now ?>"><br>
         Email Used:<br><input type = "text" name="email" value="<?=email ?>"><br>
         Medium:<br><input type = "text" name="medium" value=""><br>
@@ -49,7 +62,7 @@ $(document).ready(function(){
           <!-- <button class = "share" type="button" onclick='go();' id="go">Go!</button> -->       
            <!-- <button class = "action" type="button">test</button> <!--Corresponds to javascript function to display selected meetings-->
     </form>
-    <br><button class = "action" onClick="window.location.reload();">Add Job!</button>
+    <br><button class = "action" >Add Job!</button>
     </div>
 
 
